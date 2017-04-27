@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PlacesService } from '../../app/services/places.service';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { PlacesService } from '../../app/services/places.service';
 })
 export class NewPlacePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private placesService: PlacesService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private placesService: PlacesService,private geolocation: Geolocation) {
   }
 
   ionViewDidLoad() {
@@ -20,6 +21,19 @@ export class NewPlacePage {
 
     this.placesService.addPlace(value);
     
+  }
+
+  onLocateUser(){
+
+    this.geolocation.getCurrentPosition()
+      .then((location) => {
+
+        console.log("Location fetched successfully");
+
+      })
+      .catch((error) => {
+        console.log("An error ocurred");
+      });
   }
 
 }
