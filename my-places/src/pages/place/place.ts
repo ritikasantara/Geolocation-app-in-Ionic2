@@ -8,9 +8,15 @@ import { NavController, ViewController, NavParams } from 'ionic-angular';
 })
 export class PlacePage {
 
+  lat: number;
+  lng: number;  
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private viewCtrl: ViewController) {
+              private viewCtrl: ViewController){
+
+                this.lat = this.navParams.data.location.lat;
+                this.lng = this.navParams.data.location.lng;
   }
 
   ionViewDidLoad() {
@@ -20,7 +26,7 @@ export class PlacePage {
   onDismiss(){
 
     this.viewCtrl.dismiss();
-    
+
   }
 
 }
