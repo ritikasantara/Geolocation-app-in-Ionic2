@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="navbar-color">
+      Awesome Places
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <!--Floating Action Button-->
+
+    <ion-fab bottom fixed >
+
+      <button ion-fab (click)="onLoadNewPlace()" class="fab-button"><ion-icon name="add"></ion-icon></button>
+      
+
+    </ion-fab>
+
+
+    <ion-list inset>
+
+      <ion-item *ngFor="let place of places">
+
+        {{ place.title }}
+
+      </ion-item> 
+
+    </ion-list>
+ 
+</ion-content> 

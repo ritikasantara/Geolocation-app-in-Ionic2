@@ -1,0 +1,34 @@
+$button-md-background-color: #f04242;
+
+
+$toolbar-md-background: #f04242;
+
+
+
+page-home {
+
+
+    ion-header{
+
+        background: $toolbar-md-background;
+    }
+
+    ion-fab{
+
+        position: absolute;
+        bottom: 120px;
+        right: 12%;
+
+    }
+
+    .fab-button{
+
+        background-color: $button-md-background-color;
+    
+    }
+
+
+    p{
+        color: red;
+    }
+}
