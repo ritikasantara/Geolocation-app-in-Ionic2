@@ -42,4 +42,16 @@ export class HomePage {
     this.modalCtrl.create(PlacePage, place).present();
   }
 
+    removeItem(place: Place){
+ 
+      for(let i = 0; i < this.places.length; i++) {
+  
+        if(this.places[i] == place){
+          this.places.splice(i, 1);
+        }
+ 
+    }
+
+    }
+
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title class="navbar-color">
       Awesome Places
     </ion-title>
@@ -20,11 +20,21 @@
 
     <ion-list inset>
 
-      <ion-item *ngFor="let place of places" (click)="onOpenPlace(place)">
+      <ion-item-sliding *ngFor="let place of places" (click)="onOpenPlace(place)">
 
-        {{ place.title }}
+        <ion-item>
 
-      </ion-item> 
+          {{ place.title }}
+
+        </ion-item> 
+    
+        <ion-item-options>
+
+          <button danger (click)="removeItem(place)"><ion-icon name="trash"></ion-icon>Delete</button>
+
+        </ion-item-options>
+
+      </ion-item-sliding>
 
     </ion-list>
  
